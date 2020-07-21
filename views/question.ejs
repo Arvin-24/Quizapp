@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Quiz</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/navbar-fixed/">
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+    }
+      .active1{
+    z-index: 2;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    }
+    .wrong1{
+      background-color: #f05353;
+    border-color: #e90505;
+    color: #fff;
+    }
+    .correct1{
+      background-color:#00c700 ;
+    border-color:#00c700 ;
+    color: #fff;
+    }
+
+    </style>
+
+
+  </head>
+
+
+
+  <i class="fa fa-xing" aria-hidden="true"></i><body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal name">Hello User</h5>
+<span class="btn btn-outline-success my-2 my-sm-0 timer">Timer</span>
+  </div>
+
+
+<script>
+  var quizSet = <%-JSON.stringify(total)%>
+ 
+ </script>
+
+
+<main role="main" class="container">
+  <div class="jumbotron">
+    
+    <h1 class="quesnum"> Question </h1>
+    <p class="lead ques"></p>
+    <div class="list-group">
+      
+      <button type="button" id="opt1" class="list-group-item list-group-item-action option">option 1</button>
+      <button type="button" id="opt2" class="list-group-item list-group-item-action option">option2</button>
+      <button type="button" id="opt3" class="list-group-item list-group-item-action option">option3</button>
+      <button type="button" id="opt4" class="list-group-item list-group-item-action option">option4</button>
+    </div>
+    <br>
+    <a onclick="checkAnswer()" class="btn btn-lg btn-primary check"  role="button">Next &raquo;</a>
+    <a onclick="questionGenerate()" class="btn btn-lg btn-primary next"  role="button">Next &raquo;</a>
+  </div>
+</main>
+
+
+<form class="result" action="/question" method="POST">
+  <input type="hidden" value="wrong">
+</form>
+
+</body> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/quest.js"></script>
+
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</html>
+    

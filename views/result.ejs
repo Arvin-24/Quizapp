@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Result</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .wrong1{
+      background-color: #f05353;
+    border-color: #e90505;
+    color: #fff;
+    }
+    .correct1{
+      background-color:#02ad02 ;
+    border-color:#00a000 ;
+    color: #fff;
+    }
+
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-normal name">Hello User</h5>
+      <form class="logout" action="/" method="GET"> 
+         <button type="submit" class="btn btn-outline-danger">Logout</button>
+      </form>
+    
+        </div>
+
+<main role="main">
+
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Your Score is <%=points.answeredCorrect%></h1>
+     
+      <p><a href="/home" class="btn btn-primary btn-lg" role="button">Take test &raquo;</a></p>
+      <p class="lead">Time Taken:<%=points.timeTaken%></p>
+    </div>
+   
+  </div>
+
+  <% for(var i=0; i<=(9-points.answeredCorrect);i++) { %>
+    
+   
+
+  <main role="main" class="container">
+
+  
+    <div class="card mb-4 shadow-sm card-body">
+     <h1 class="quescrct" id="quescrctNum"> Question <%= (parseInt(points.rep[i].qNum))+1 %></h1> 
+      <p class="lead ques" id="quescrct"><%=points.rep[i].questionReport %></p>
+      <div class="list-group">
+        
+        <div class="alert alert-success"><%=points.rep[i].answerReport%></div>
+        <div class="alert alert-danger"><%=points.rep[i].userReport %></div>
+      </div>
+ 
+    </div>
+  </div>
+
+  </main>
+<%  } %>
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+  <p class="text-center">&copy; Trivia</p>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/result.js"></script>
+
+
+
+
+
+
+
+
+
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</html>
+    
